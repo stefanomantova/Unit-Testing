@@ -1,0 +1,26 @@
+{
+  "name": "unit-testing",
+  "version": "1.0.0",
+  "description": "repo to learn and practice Unit Testing (TDD)",
+  "main": "practice.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "scripts": {
+      "test": "jest --watch"
+    },
+  
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/stefanomantova/Unit-Testing.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/stefanomantova/Unit-Testing/issues"
+  },
+  "homepage": "https://github.com/stefanomantova/Unit-Testing#readme",
+  "devDependencies": {
+    "jest": "^27.4.7"
+  }
+}
