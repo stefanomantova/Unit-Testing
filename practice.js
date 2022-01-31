@@ -1,3 +1,4 @@
+const { max } = require("lodash");
 
 
   function capitalize(inputWord){
@@ -65,6 +66,46 @@ return ciphred;
     return (toBeWrapped -= 26);
   }
  }
+
+ const analyzeArray = (array) =>{
+   let results = {
+     average : average(array),
+     min : minimum(array),
+     max : maximum(array),
+     length: array.length
+   }
+   
+   return results;
+
+ }
+
+ const average = (array) =>{
+   let result = 0;
+   for(let i in array){
+    result += array[i];
+   }
+   return (result = result/(array.length));
+ }
+
+ const minimum = (array) =>{
+   let result = array[0];
+   for(let i in array){
+     if(array[i]<result){
+       result = array[i];
+     }
+   }
+   return result;
+ }
+
+ const maximum = (array) =>{
+  let result = array[0];
+  for(let i in array){
+    if(array[i]>result){
+      result = array[i];
+    }
+  }
+  return result;
+}
  
 
-module.exports  = {reverseString , capitalize, calculator,caesarCipher};
+module.exports  = {reverseString , capitalize, calculator,caesarCipher,analyzeArray};

@@ -49,3 +49,30 @@ test('caesarCipher: Cases! wrapping "zEbRA... " has been shifted to "bGdTC... " 
   expect(practice.caesarCipher("zEbRA... ",2)).toBe("bGdTC... ");
 });
 
+test ('analyzing array[1,2,3], average should be 2',() =>{
+  expect(practice.analyzeArray([1,2,3])).toMatchObject({average:2});
+});
+
+test ('analyzing array[1,2,3,4,7,1,8,6], average should be 4',() =>{
+  expect(practice.analyzeArray([1,2,3,4,7,1,8,6])).toMatchObject({average:4});
+});
+
+test ('analyzing array[23,2,3,4,7,1,8,6], minimum should be 1',() =>{
+  expect(practice.analyzeArray([23,2,3,4,7,1,8,6])).toMatchObject({min:1});
+});
+
+test ('analyzing array[23,2,3,4,7,1,8,6], maximum should be 23',() =>{
+  expect(practice.analyzeArray([23,2,3,4,7,1,8,6])).toMatchObject({max:23});
+});
+
+test ('analyzing array[23,2,3,4,7,1,8,6], length is 8',() =>{
+  expect(practice.analyzeArray([23,2,3,4,7,1,8,6])).toMatchObject({length:8});
+});
+
+test ('analyzing array[2,9,12,0,45,1,1], average is 10, min is 0, max is 45, length is 7',() =>{
+  expect(practice.analyzeArray([2,9,12,0,45,1,1])).toMatchObject({average:10,min:0,max:45,length:7});
+});
+
+test ('analyzing array[2,9,12,0,45,1,0,0,1,0], average is 7, min is 0, max is 45, length is 7',() =>{
+  expect(practice.analyzeArray([2,9,12,0,45,1,0,0,1,0])).toMatchObject({average:7,min:0,max:45,length:10});
+});
