@@ -21,6 +21,9 @@ test('multiply 1 and 2 = 2', () =>{
   expect(practice.calculator.multiply(1,2)).toBe(2);
 });
 
+test('caesarCipher: Full Message! Coding: Help! The enemies have invaded our deploy base!! - shift by 15', ()=>{
+  expect(practice.caesarCipher("Help! The enemies have invaded our deploy base!!",14)).toBe('Vszd! Hvs sbsawsg vojs wbjorsr cif rsdzcm pogs!!');
+});
 
 test('caesarCipher: "placeholder" has been shifted to "qmbdfipmefs" by 1',() =>{
   expect(practice.caesarCipher("placeholder")).toBe("qmbdfipmefs");
@@ -39,6 +42,9 @@ test('caesarCipher: wrapping "zebra" has been shifted to "bgdtc" by 2',() =>{
 
 test('caesarCipher: puntuaction! wrapping "zebra..." has been shifted to "bgdtc..." by 2',() =>{
   expect(practice.caesarCipher("zebra...",2)).toBe("bgdtc...");
+});
+test('caesarCipher: puntuaction! wrapping "zebra..." has been shifted to "bgdtc..." by 1',() =>{
+  expect(practice.caesarCipher("zebra...",1)).toBe("afcsb...");
 });
 
 test('caesarCipher: spaces! wrapping "zebra " has been shifted to "bgdtc " by 2',() =>{

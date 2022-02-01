@@ -27,36 +27,48 @@ return 1*2;
 }
 
 }
-
 function caesarCipher(StringInput,shiftCases){
   if (shiftCases == undefined)
   shiftCases = 1;
- let ciphred = '';
+ let result = '';
+ let indexOfChar;
 const alphabet = buildAlphabet();
 for(let i in StringInput){
-  if(!(alphabet.includes(StringInput.charAt(i)))){
-    ciphred += StringInput.charAt(i);
+  //keeping case is not working due to this
+  if(!(alphabet.lowerCase.includes(StringInput.charAt(i))||alphabet.upperCase.includes(StringInput.charAt(i)))){
+    result += StringInput.charAt(i);
   }else{ 
-     let indexOfChar = (alphabet.indexOf(StringInput.charAt(i)));
-    
-  if(indexOfChar >= 25)
-  indexOfChar -=26;
-  if(StringInput.charAt(i) == (StringInput.charAt(i).toUpperCase())){
-    ciphred += ((alphabet[indexOfChar+shiftCases]).toUpperCase());
+    if((alphabet.lowerCase.includes(StringInput.charAt(i)))){
+      indexOfChar = (alphabet.lowerCase.indexOf(StringInput.charAt(i)));
     }else{
+       indexOfChar = (alphabet.upperCase.indexOf(StringInput.charAt(i)));
 
-ciphred += alphabet[indexOfChar+shiftCases];
+    }
+    
+  //keeping case
+  if(alphabet.lowerCase.includes(StringInput.charAt(i))){
+    if((indexOfChar+shiftCases) > 25)
+  indexOfChar -=26;
+    result += ((alphabet.lowerCase[indexOfChar+shiftCases]));
+    }else{
+      if((indexOfChar+shiftCases) > 25)
+      indexOfChar -=26;
+    result += alphabet.upperCase[indexOfChar+shiftCases];
     }
 }
 }
-return ciphred;
+return result;
 
  }
 
  function buildAlphabet(){
-  let alphaArray = []; alphaArray.length = 26;
+  let alphaArray ={
+    lowerCase : [],
+    upperCase : []
+  } ; alphaArray.length = 26;
   for(let i = 0,  j = 65; i< alphaArray.length; i++,j++){
-    alphaArray[i] = String.fromCharCode(j).toLowerCase();
+    alphaArray.lowerCase[i] = String.fromCharCode(j).toLowerCase();
+    alphaArray.upperCase[i] = String.fromCharCode(j);
   }
   return alphaArray;
  }
